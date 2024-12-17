@@ -1,0 +1,33 @@
+To solve the issues demonstrated in `bug.css`, consider the following approaches:
+
+**Issue 1: Combining Percentages and Fixed Units:**
+
+Instead of using `calc(50% + 10px)`, consider using either percentages only or fixed units only for the width calculation.  If possible, rearrange your layout to avoid needing a combination of units.
+
+**Solution:**
+```css
+/* Use only percentages */
+.element {
+  width: 60%; /* Adjust to desired width */
+}
+
+/* Or, use only fixed units */
+.element {
+  width: 300px; /* Adjust to desired width */
+}
+```
+
+**Issue 2: `calc()` within Media Queries:**
+
+It's generally best to avoid using `calc()` directly within media query conditions, especially if it involves percentages.  Simplify the expression or use alternative approaches based on browser viewport dimensions.
+
+**Solution:**
+Instead of relying on `calc(100vw - 100px)`, use a fixed width value, or use JavaScript to dynamically adjust styles based on the viewport size.
+```css
+/* Use a fixed width */
+@media (max-width: 900px) {
+  .element {
+    width: 50%;
+  }
+}
+```
