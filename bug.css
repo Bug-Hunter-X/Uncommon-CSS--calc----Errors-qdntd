@@ -1,0 +1,15 @@
+The CSS property `calc()` is used to perform calculations within CSS. However, there are some edge cases where it doesn't work as expected. One such case is when dealing with percentages and other units in a single `calc()` expression. For example, the following code might not work as expected:
+```css
+.element {
+  width: calc(50% + 10px);
+}
+```
+In this case, the browser may not correctly interpret the calculation, and it may lead to unexpected results. Another case is when using `calc()` with media queries. For example:
+```css
+@media (max-width: calc(100vw - 100px)) {
+  .element {
+    width: 50%;
+  }
+}
+```
+This media query may not work correctly across all browsers.
